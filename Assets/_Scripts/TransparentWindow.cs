@@ -40,9 +40,8 @@ public class TransparentWindow : MonoBehaviour
             SetWindowLong(handle, -16, lCurStyle); // GWL_STYLE=-16
             
             // Transparent windows with click through
-            SetWindowLong(handle, -20,
-             524288 | 32); //GWL_EXSTYLE=-20; WS_EX_LAYERED=524288=&h80000, WS_EX_TRANSPARENT=32=0x00000020L
-            //             SetLayeredWindowAttributes(handle, 0, 51, 2); // Transparency=51=20%, LWA_ALPHA=2
+            SetWindowLong(handle, -20, 524288); //GWL_EXSTYLE=-20; WS_EX_LAYERED=524288=&h80000, WS_EX_TRANSPARENT=32=0x00000020L
+            // SetLayeredWindowAttributes(handle, 0, 51, 2); // Transparency=51=20%, LWA_ALPHA=2
             SetLayeredWindowAttributes(handle, 0, 51, 1); // Transparency=51=20%, LWA_ALPHA=2
             
             int SWP_NOSIZE = 1; //0x0001;
